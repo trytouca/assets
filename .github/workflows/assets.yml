@@ -25,4 +25,6 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
           role-to-assume: ${{ secrets.AWS_ROLE }}
       - name: upload assets to s3
-        run: aws s3 sync ./docs/external/assets/ ${{ secrets.AWS_BUCKET_WEB }}/docs/external/assets/
+        run: |
+          aws s3 sync ./docs/external/assets/ ${{ secrets.AWS_BUCKET_WEB }}/docs/external/assets/
+          aws s3 sync ./web/external/assets/ ${{ secrets.AWS_BUCKET_WEB }}/web/external/assets/
