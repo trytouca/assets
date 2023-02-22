@@ -28,3 +28,4 @@ jobs:
         run: |
           aws s3 sync ./docs/external/assets/ ${{ secrets.AWS_BUCKET_WEB }}/docs/external/assets/
           aws s3 sync ./web/external/assets/ ${{ secrets.AWS_BUCKET_WEB }}/web/external/assets/
+          aws s3 sync ./etc/ ${{ secrets.AWS_BUCKET_WEB }}/etc/
